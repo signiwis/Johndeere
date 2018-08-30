@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9178d2fe-18e5-4c02-8be0-e3cd0d8bac7d" activeEnvironment="Default" name="REST Project 2" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:restMockService id="fe906fa9-b718-4194-b9a5-099cda64d721" port="8080" path="/" host="AGRN50936801A" name="Mercury"><con:settings/><con:properties/><con:restMockAction name="/customers/self/accounts" method="GET" resourcePath="/customers/self/accounts" id="2e487b65-eb17-4ce2-9292-bb06cca85739"><con:description>Gets list of all available customer accounts based on access token sent in request.</con:description><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+// Script dispatcher is used to select a response based on the incoming request.
+// Here are few examples showing how to match based on path, query param, header and body
+
+// Match based on path
+def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+if( requestPath.contains("json") )
+{
+    // return the name of the response you want to dispatch
+    return "JSON Response"
+}
+
+
+// Match based on query parameter
+def queryString = mockRequest.getRequest().getQueryString()
+log.info "QueryString: " + queryString
+
+if( queryString.contains("stockholm") )
+{
+    // return the name of the response you want to dispatch
+    return "Response Stockholm"
+}
+else if( queryString.contains("london") )
+{
+    // return the name of the response you want to dispatch
+    return "Response London"
+}
+
+
+// Match based on header
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+
+if( acceptEncodingHeaderList.contains("gzip,deflate") )
+{
+    // return the name of the response you want to dispatch
+    return "GZiped Response"
+}
+
+
+// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("some data") )
+{
+    // return the name of the response you want to dispatch
+    return "Response N"
+}
+*/
+</con:dispatchPath><con:response name="getcustomerAccountList" id="99308c47-ef56-4dcd-890d-59e6d4b5edd5" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[
+    {
+        "id": "106326589",
+        "object": "account",
+        "accountNumber": "106326589",
+        "segment": "SCAM",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0001",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/106326589/balance",
+            "customer": "/customers/1000694368",
+            "self": "/accounts/106326589",
+            "services": "/accounts/106326589/services",
+            "transactions": "/accounts/106326589/transactions",
+            "paymentMethod": "/accounts/1000694368/paymentmethods/bankaccounts/0001"
+        }
+    },
+    {
+        "id": "113071973",
+        "object": "account",
+        "accountNumber": "113071973",
+        "segment": "SCAM",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071973/balance",
+            "customer": "/customers/113071973",
+            "self": "/accounts/113071973",
+            "services": "/accounts/113071973/services",
+            "transactions": "/accounts/113071973/transactions",
+            "paymentMethod": "/accounts/113071973/paymentmethods/bankaccounts/0009"
+        }
+    },
+    {
+        "id": "113071974",
+        "object": "account",
+        "accountNumber": "113071974",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071974/balance",
+            "customer": "/customers/113071974",
+            "self": "/accounts/113071974",
+            "services": "/accounts/113071974/services",
+            "transactions": "/accounts/113071974/transactions",
+            "paymentMethod": "/accounts/113071974/paymentmethods/bankaccounts/0001"
+        }
+    },
+    {
+        "id": "113071975",
+        "object": "account",
+        "accountNumber": "113071975",
+        "segment": "LCOM",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071975/balance",
+            "customer": "/customers/113071975",
+            "self": "/accounts/113071975",
+            "services": "/accounts/113071975/services",
+            "transactions": "/accounts/113071975/transactions",
+            "paymentMethod": "/accounts/113071975/paymentmethods/bankaccounts/0009"
+        }
+    },
+    {
+        "id": "113071976",
+        "object": "account",
+        "accountNumber": "113071976",
+        "segment": "LCOM",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071976/balance",
+            "customer": "/customers/113071976",
+            "self": "/accounts/113071976",
+            "services": "/accounts/113071976/services",
+            "transactions": "/accounts/113071976/transactions",
+            "paymentMethod": "/accounts/113071976/paymentmethods/bankaccounts/0001"
+        }
+    },
+    {
+        "id": "113071977",
+        "object": "account",
+        "accountNumber": "113071977",
+        "segment": "RESI",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071977/balance",
+            "customer": "/customers/113071977",
+            "self": "/accounts/113071977",
+            "services": "/accounts/113071977/services",
+            "transactions": "/accounts/113071977/transactions",
+            "paymentMethod": "/accounts/113071977/paymentmethods/bankaccounts/0009"
+        }
+    },
+    {
+        "id": "113071978",
+        "object": "account",
+        "accountNumber": "113071978",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+         "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071978/balance",
+            "customer": "/customers/113071978",
+            "self": "/accounts/113071978",
+            "services": "/accounts/113071978/services",
+            "transactions": "/accounts/113071978/transactions",
+            "paymentMethod": "/accounts/113071978/paymentmethods/bankaccounts/0001"
+        }
+    },
+    {
+        "id": "113071979",
+        "object": "account",
+        "accountNumber": "113071979",
+        "segment": "RESI",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071979/balance",
+            "customer": "/customers/113071979",
+            "self": "/accounts/113071979",
+            "services": "/accounts/113071979/services",
+            "transactions": "/accounts/113071979/transactions",
+            "paymentMethod": "/accounts/113071979/paymentmethods/bankaccounts/0009"
+        }
+    },
+    {
+        "id": "113071980",
+        "object": "account",
+        "accountNumber": "113071980",
+        "segment": "RESI",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0001",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071980/balance",
+            "customer": "/customers/113071980",
+            "self": "/accounts/113071980",
+            "services": "/accounts/113071980/services",
+            "transactions": "/accounts/113071980/transactions",
+            "paymentMethod": "/accounts/113071980/paymentmethods/bankaccounts/0001"
+        }
+    },
+    {
+        "id": "113071981",
+        "object": "account",
+        "accountNumber": "113071981",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071981/balance",
+            "customer": "/customers/113071981",
+            "self": "/accounts/113071981",
+            "services": "/accounts/113071981/services",
+            "transactions": "/accounts/113071981/transactions",
+            "paymentMethod": "/accounts/113071981/paymentmethods/bankaccounts/0009"
+        }
+    },
+    {
+        "id": "113071982",
+        "object": "account",
+        "accountNumber": "113071982",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071982/balance",
+            "customer": "/customers/113071982",
+            "self": "/accounts/113071982",
+            "services": "/accounts/113071982/services",
+            "transactions": "/accounts/113071982/transactions",
+            "paymentMethod": "/accounts/113071982/paymentmethods/bankaccounts/0001"
+        }
+    }
+]</con:responseContent></con:response></con:restMockAction><con:restMockAction name="accounts/{accountId}/*" method="GET" resourcePath="/accounts" id="33e8305f-a1bf-4554-820e-edd06259ffb7"><con:description>Gets details of account with given ID</con:description><con:settings/><con:defaultResponse>AccountDetail_106326589</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def requestPath = mockRequest.getPath()
+
+//// ######### Transaction Response #########
+if( requestPath.contains("accounts/106326589/transactions") || requestPath.contains("accounts/113071973/transactions") || requestPath.contains("accounts/113071974/transactions") )
+{
+    // return the name of the response you want to dispatch
+    return "Resp_No_Transactions"
+}
+
+else if( requestPath.contains("/accounts/113071975/transactions") || requestPath.contains("accounts/113071976/transactions") || requestPath.contains("accounts/113071977/transactions") )
+{
+    // return the name of the response you want to dispatch
+    return "Resp_Transactions_2"
+}
+
+else if( requestPath.contains("accounts/113071978/transactions") || requestPath.contains("accounts/113071979/transactions") || requestPath.contains("accounts/113071980/transactions"))
+{
+    // return the name of the response you want to dispatch
+    return "Resp_Transactions_More_than_5"
+}
+
+else if( requestPath.contains("/accounts/113071981/transactions") || requestPath.contains("accounts/113071982/transactions") )
+{
+    // return the name of the response you want to dispatch
+    return "Resp_Transactions_2"
+}
+
+
+////// ####### END of Transaction Response
+
+/// #################### Account Balance Details
+else if( requestPath.contains("accounts/106326589/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_106326589_balance"
+}
+
+else if( requestPath.contains("/accounts/113071973/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071973_balance"
+}
+
+else if( requestPath.contains("accounts/113071974/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071974_balance"
+}
+
+else if( requestPath.contains("/accounts/113071975/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071975_balance"
+}
+
+else if( requestPath.contains("accounts/113071976/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071976_balance"
+}
+
+else if( requestPath.contains("/accounts/113071977/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071977_balance"
+}
+
+else if( requestPath.contains("accounts/113071978/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071978_balance"
+}
+
+else if( requestPath.contains("/accounts/113071979/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071979_balance"
+}
+
+else if( requestPath.contains("accounts/113071980/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071980_balance"
+}
+
+else if( requestPath.contains("/accounts/113071981/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071981_balance"
+}
+
+else if( requestPath.contains("/accounts/113071982/balance") )
+{
+    // return the name of the response you want to dispatch
+    return "Account_113071982_balance"
+}
+
+// ########################################################
+
+else if( requestPath.contains("accounts/106326589") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_106326589"
+}
+
+else if( requestPath.contains("/accounts/113071973") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071973"
+}
+
+else if( requestPath.contains("accounts/113071974") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071974"
+}
+
+else if( requestPath.contains("/accounts/113071975") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071975"
+}
+
+else if( requestPath.contains("accounts/113071976") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071976"
+}
+
+else if( requestPath.contains("/accounts/113071977") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071977"
+}
+
+else if( requestPath.contains("accounts/113071978") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071978"
+}
+
+else if( requestPath.contains("/accounts/113071979") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071979"
+}
+
+else if( requestPath.contains("accounts/113071980") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071980"
+}
+
+else if( requestPath.contains("/accounts/113071981") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071981"
+}
+
+else if( requestPath.contains("/accounts/113071982") )
+{
+    // return the name of the response you want to dispatch
+    return "AccountDetail_113071982"
+}
+
+</con:dispatchPath><con:response name="AccountDetail_106326589" id="fd973c6c-6d0f-4bd8-80c7-652eec1c432b" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "106326589",
+        "object": "account",
+        "accountNumber": "106326589",
+        "segment": "SCAM",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0001",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/106326589/balance",
+            "customer": "/customers/1000694368",
+            "self": "/accounts/106326589",
+            "services": "/accounts/106326589/services",
+            "transactions": "/accounts/106326589/transactions",
+            "paymentMethod": "/accounts/1000694368/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071973" id="79caae63-f266-4e17-87f6-50718496c679" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071973",
+        "object": "account",
+        "accountNumber": "113071973",
+        "segment": "SCAM",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071973/balance",
+            "customer": "/customers/113071973",
+            "self": "/accounts/113071973",
+            "services": "/accounts/113071973/services",
+            "transactions": "/accounts/113071973/transactions",
+            "paymentMethod": "/accounts/113071973/paymentmethods/bankaccounts/0009"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071974" id="f3c5b716-2cf1-49f2-ba50-2a01d9ed064e" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071974",
+        "object": "account",
+        "accountNumber": "113071974",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071974/balance",
+            "customer": "/customers/113071974",
+            "self": "/accounts/113071974",
+            "services": "/accounts/113071974/services",
+            "transactions": "/accounts/113071974/transactions",
+            "paymentMethod": "/accounts/113071974/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071976" id="58f53951-1fe7-4c3d-9e32-703beca81bc1" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071976",
+        "object": "account",
+        "accountNumber": "113071976",
+        "segment": "LCOM",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071976/balance",
+            "customer": "/customers/113071976",
+            "self": "/accounts/113071976",
+            "services": "/accounts/113071976/services",
+            "transactions": "/accounts/113071976/transactions",
+            "paymentMethod": "/accounts/113071976/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071977" id="164cd50a-774d-4a56-a683-e146b8abd9fa" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071977",
+        "object": "account",
+        "accountNumber": "113071977",
+        "segment": "RESI",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071977/balance",
+            "customer": "/customers/113071977",
+            "self": "/accounts/113071977",
+            "services": "/accounts/113071977/services",
+            "transactions": "/accounts/113071977/transactions",
+            "paymentMethod": "/accounts/113071977/paymentmethods/bankaccounts/0009"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071978" id="6faa1344-686f-4390-a948-0f47eba32934" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071978",
+        "object": "account",
+        "accountNumber": "113071978",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+         "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071978/balance",
+            "customer": "/customers/113071978",
+            "self": "/accounts/113071978",
+            "services": "/accounts/113071978/services",
+            "transactions": "/accounts/113071978/transactions",
+            "paymentMethod": "/accounts/113071978/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071979" id="384036fd-cdc1-47f3-8a1d-b844b061e27c" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071979",
+        "object": "account",
+        "accountNumber": "113071979",
+        "segment": "RESI",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071979/balance",
+            "customer": "/customers/113071979",
+            "self": "/accounts/113071979",
+            "services": "/accounts/113071979/services",
+            "transactions": "/accounts/113071979/transactions",
+            "paymentMethod": "/accounts/113071979/paymentmethods/bankaccounts/0009"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071980" id="91cce2be-ff3e-47bc-becb-cc7cb90094d1" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071980",
+        "object": "account",
+        "accountNumber": "113071980",
+        "segment": "RESI",
+        "paymentType": "Credit Card",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0001",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071980/balance",
+            "customer": "/customers/113071980",
+            "self": "/accounts/113071980",
+            "services": "/accounts/113071980/services",
+            "transactions": "/accounts/113071980/transactions",
+            "paymentMethod": "/accounts/113071980/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071981" id="99c64e49-c42d-4da8-8b5e-e56cc9b5b0c3" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071981",
+        "object": "account",
+        "accountNumber": "113071981",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071981/balance",
+            "customer": "/customers/113071981",
+            "self": "/accounts/113071981",
+            "services": "/accounts/113071981/services",
+            "transactions": "/accounts/113071981/transactions",
+            "paymentMethod": "/accounts/113071981/paymentmethods/bankaccounts/0009"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071982" id="870efd49-3f0d-4ab7-8953-c3f1f304dae7" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071982",
+        "object": "account",
+        "accountNumber": "113071982",
+        "segment": "RESI",
+        "paymentType": "",
+        "directDebitAllowed": true,
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071982/balance",
+            "customer": "/customers/113071982",
+            "self": "/accounts/113071982",
+            "services": "/accounts/113071982/services",
+            "transactions": "/accounts/113071982/transactions",
+            "paymentMethod": "/accounts/113071982/paymentmethods/bankaccounts/0001"
+        }
+    }</con:responseContent></con:response><con:response name="AccountDetail_113071975" id="4d003080-9ec1-4b65-aa3e-f5810ef008e0" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+        "id": "113071975",
+        "object": "account",
+        "accountNumber": "113071975",
+        "segment": "LCOM",
+        "paymentType": "Direct Debit",
+        "directDebitAllowed": true,
+        "paymentMethod": {
+            "type": "bankaccount",
+            "paymentMethodId": "0009",
+            "status": "active"
+        },
+        "address": "PO Box 26561 / Auckland 1344",
+        "links": {
+            "balance": "/accounts/113071975/balance",
+            "customer": "/customers/113071975",
+            "self": "/accounts/113071975",
+            "services": "/accounts/113071975/services",
+            "transactions": "/accounts/113071975/transactions",
+            "paymentMethod": "/accounts/113071975/paymentmethods/bankaccounts/0009"
+        }
+    }</con:responseContent></con:response><con:response name="Account_106326589_balance" id="e5d6075d-4378-45f2-9b28-33bbaf97df0a" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"106326589",
+"balance":"-55",
+"dueDate":"2018-07-31",
+"dueAmount":"55",
+"overdueAmount":"0",
+"paymentType":"Direct Debit",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071973_balance" id="945b958b-ce3e-4b3b-ba84-c3a70b163d10" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071973",
+"balance":"-55",
+"dueDate":"2018-07-31",
+"dueAmount":"55",
+"overdueAmount":"0",
+"paymentType":"Credit Card",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071974_balance" id="c040b580-84e0-4ca4-ad8a-990362c2488e" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071974",
+"balance":"-75",
+"dueDate":"2018-07-31",
+"dueAmount":"75",
+"overdueAmount":"65",
+"paymentType":"",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071975_balance" id="be919582-73ee-409c-b4aa-f9d3cee5ba36" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>"object":"balance",
+"id":"113071975",
+"balance":"-55",
+"dueDate":null,
+"dueAmount":"55",
+"overdueAmount":"0",
+"paymentType":"",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071976_balance" id="70517610-3481-4d73-a5ed-d29f0f0585ce" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071976",
+"balance":"-55",
+"dueDate":null,
+"dueAmount":"55",
+"overdueAmount":"0",
+"paymentType":"",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071977_balance" id="03d93d9b-bd88-4d05-922b-970d6d595020" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071977",
+"balance":"-55",
+"dueDate":"2018-07-31",
+"dueAmount":"55",
+"overdueAmount":"55",
+"paymentType":"Credit Card",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071978_balance" id="418901c4-a1c7-474d-9b2e-43d397f2d8e7" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071978",
+"balance":"55",
+"dueDate":"2018-07-31",
+"dueAmount":"-55",
+"overdueAmount":"0",
+"paymentType":"Credit Card",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071979_balance" id="a1a8c439-6a13-42ad-b45f-65c5bfb3586f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071979",
+"balance":"-55",
+"dueDate":"2018-07-31",
+"dueAmount":"55",
+"overdueAmount":"55",
+"paymentType":"Direct Debit",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071980_balance" id="d5d58298-5c23-4ce7-bac8-0a9f83f3536b" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071980",
+"balance":"0",
+"dueDate":"2018-07-31",
+"dueAmount":"0",
+"overdueAmount":"0",
+"paymentType":"Credit Card",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071981_balance" id="d2c331e8-0d55-4ea6-9337-8f3d737fdd8a" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071981",
+"balance":"-55",
+"dueDate":null,
+"dueAmount":"55",
+"overdueAmount":"0",
+"paymentType":"",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Account_113071982_balance" id="682e315f-d10e-4ff0-979c-0fd6d720467f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+"object":"balance",
+"id":"113071982",
+"balance":"-75",
+"dueDate":"2018-07-31",
+"dueAmount":"75",
+"overdueAmount":"65",
+"paymentType":"",
+"installmentPlan":false
+}</con:responseContent></con:response><con:response name="Resp_No_Transactions" id="3f71643e-6bfc-480e-9e26-2950d05c6f98" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[]</con:responseContent></con:response><con:response name="Resp_Transactions_2" id="57a87ddd-9df9-4aec-8db1-2f9e1120f404" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[
+    {
+        "id": "17050626524",
+        "object": "transaction",
+        "category": "DCRD",
+        "date": "2016-09-09",
+        "description": "Direct Debit",
+        "amount": "0.00",
+        "promptPayment": true,
+        "invoice": null
+    },
+    {
+        "id": "12905413903",
+        "object": "transaction",
+        "category": "INVO",
+        "date": "2016-08-19",
+        "description": "Invoice",
+        "amount": "245.98",
+        "promptPayment": null,
+        "invoice": {
+            "invoiceNumber": "12906199193",
+            "dueAmount": "245.98",
+            "gst": "32.09",
+            "dateIssued": "2016-08-19",
+            "dateDue": "2016-09-12",
+            "status": "PAID",
+            "discount": {
+                "dueAmount": "212.61",
+                "discountAmount": "33.37",
+                "dateDue": "2016-09-09",
+                "discountRate": "12.00"
+            },
+            "usage": {
+                "electricity": {
+                    "consumption": 831,
+                    "unit": "KWH"
+                },
+                "gas": null
+            }
+        }
+    }
+]</con:responseContent></con:response><con:response name="Resp_Transactions_More_than_5" id="abf596b2-54bf-4b96-9f60-c1d3db38d037" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[
+    {
+        "id": "2005812032",
+        "object": "transaction",
+        "category": "INVO",
+        "date": "2016-10-19",
+        "description": "Invoice",
+        "amount": "138.22",
+        "promptPayment": null,
+        "invoice": {
+            "invoiceNumber": "2306284048",
+            "dueAmount": "328.22",
+            "gst": "18.03",
+            "dateIssued": "2016-10-19",
+            "dateDue": "2016-11-10",
+            "status": "PARP",
+            "discount": {
+                "dueAmount": "309.47",
+                "discountAmount": "18.75",
+                "dateDue": "2016-11-09",
+                "discountRate": "12.00"
+            },
+            "usage": {
+                "electricity": {
+                    "consumption": 336,
+                    "unit": "KWH"
+                },
+                "gas": null
+            }
+        }
+    },
+    {
+        "id": "105905990",
+        "object": "transaction",
+        "category": "DEBT",
+        "date": "2016-10-18",
+        "description": "Meter relocation",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "17450764944",
+        "object": "transaction",
+        "category": "DCRD",
+        "date": "2016-10-12",
+        "description": "Direct Debit",
+        "amount": "0.00",
+        "promptPayment": true,
+        "invoice": null
+    },
+    {
+        "id": "12705167615",
+        "object": "transaction",
+        "category": "INVO",
+        "date": "2016-09-21",
+        "description": "Invoice",
+        "amount": "253.15",
+        "promptPayment": null,
+        "invoice": {
+            "invoiceNumber": "2306247358",
+            "dueAmount": "253.15",
+            "gst": "33.02",
+            "dateIssued": "2016-09-21",
+            "dateDue": "2016-10-13",
+            "status": "PAID",
+            "discount": {
+                "dueAmount": "218.81",
+                "discountAmount": "34.34",
+                "dateDue": "2016-10-12",
+                "discountRate": "12.00"
+            },
+            "usage": {
+                "electricity": {
+                    "consumption": 820,
+                    "unit": "KWH"
+                },
+                "gas": null
+            }
+        }
+    },
+    {
+        "id": "17050626524",
+        "object": "transaction",
+        "category": "DCRD",
+        "date": "2016-09-09",
+        "description": "Direct Debit",
+        "amount": "0.00",
+        "promptPayment": true,
+        "invoice": null
+    },
+    {
+        "id": "12905413903",
+        "object": "transaction",
+        "category": "INVO",
+        "date": "2016-08-19",
+        "description": "Invoice",
+        "amount": "245.98",
+        "promptPayment": null,
+        "invoice": {
+            "invoiceNumber": "12906199193",
+            "dueAmount": "245.98",
+            "gst": "32.09",
+            "dateIssued": "2016-08-19",
+            "dateDue": "2016-09-12",
+            "status": "PAID",
+            "discount": {
+                "dueAmount": "212.61",
+                "discountAmount": "33.37",
+                "dateDue": "2016-09-09",
+                "discountRate": "12.00"
+            },
+            "usage": {
+                "electricity": {
+                    "consumption": 831,
+                    "unit": "KWH"
+                },
+                "gas": null
+            }
+        }
+    },
+    {
+        "id": "200516080",
+        "object": "transaction",
+        "category": "PAYMT",
+        "date": "2017-01-10",
+        "description": "Payment",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "400652308",
+        "object": "transaction",
+        "category": "",
+        "date": "2017-01-10",
+        "description": "Card Payment Fee inc GST",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "200516047",
+        "object": "transaction",
+        "category": "PAYMT",
+        "date": "2016-11-30",
+        "description": "Payment",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "400652265",
+        "object": "transaction",
+        "category": "",
+        "date": "2016-11-30",
+        "description": "Card Payment Fee inc GST",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "200516020",
+        "object": "transaction",
+        "category": "PAYMT",
+        "date": "2016-11-23",
+        "description": "Payment",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "400652238",
+        "object": "transaction",
+        "category": "",
+        "date": "2016-11-23",
+        "description": "Card Payment Fee inc GST",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "200516013",
+        "object": "transaction",
+        "category": "PAYMT",
+        "date": "2016-11-16",
+        "description": "Payment",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "400652230",
+        "object": "transaction",
+        "category": "",
+        "date": "2016-11-16",
+        "description": "Card Payment Fee inc GST",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "200516012",
+        "object": "transaction",
+        "category": "PAYMT",
+        "date": "2016-11-16",
+        "description": "Payment",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    },
+    {
+        "id": "400652229",
+        "object": "transaction",
+        "category": "",
+        "date": "2016-11-16",
+        "description": "Card Payment Fee inc GST",
+        "amount": "0.00",
+        "promptPayment": false,
+        "invoice": null
+    }
+]</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
