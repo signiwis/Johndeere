@@ -1,0 +1,9 @@
+#Ant properties
+#Wed Jun 14 12:32:40 CEST 2017
+builddate=20170614 1231
+description=tatacliqcore
+name=tatacliqcore
+releasedate=20161216 2030
+vendor=hybris
+version=6.3.0.6
+version.api=6.3.0
