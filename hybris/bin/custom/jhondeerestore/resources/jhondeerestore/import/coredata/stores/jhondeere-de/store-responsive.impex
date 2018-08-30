@@ -1,0 +1,45 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Create the Responsive Jhondeere DE Store
+#
+$productCatalog=jhondeereProductCatalog
+$currencies=EUR
+$net=false
+$storeUid=jhondeere-de
+$paymentProvider=Mockup
+
+$defaultCurrency=EUR
+$languages=de
+$defaultLanguage=de
+$europeNotUK=AD,AL,AT,BA,BE,BG,BY,CH,CY,CZ,DE,DK,EE,ES,FI,FO,FR,GI,GL,GR,HR,HU,IE,IS,IT,LI,LT,LU,LV,MC,MD,ME,MK,MT,NL,NO,PL,PT,RO,RS,RU,SE,SI,SK,SM,TR,UA,VA
+$deliveryCountries=$europeNotUK
+$orderProcessCode=order-process
+$pickupInStoreMode=DISABLED
+$expressCheckoutEnabled=false
+$returnProcessCode=return-process
+
+$checkoutFlowGroup=responsiveCheckoutGroup
+
+INSERT_UPDATE PromotionGroup;Identifier[unique=true];
+;jhondeereDEPromoGrp;
+
+# Base Store
+INSERT_UPDATE BaseStore;uid[unique=true];catalogs(id);currencies(isocode);net;taxGroup(code);storelocatorDistanceUnit(code);defaultCurrency(isocode);languages(isocode);defaultLanguage(isocode);deliveryCountries(isocode);submitOrderProcessCode;pickupInStoreMode(code);paymentProvider;expressCheckoutEnabled;maxRadiusForPoSSearch;checkoutFlowGroup;createReturnProcessCode;
+;$storeUid;$productCatalog;$currencies;$net;de-taxes;km;$defaultCurrency;$languages;$defaultLanguage;$deliveryCountries;$orderProcessCode;$pickupInStoreMode;$paymentProvider;$expressCheckoutEnabled;300;$checkoutFlowGroup;$returnProcessCode;
+
+INSERT_UPDATE BaseStore2DeliveryModeRel;source(uid)[unique=true];target(code)[unique=true]
+;jhondeere-de;premium-net
+;jhondeere-de;standard-net
+;jhondeere-de;premium-gross
+;jhondeere-de;standard-gross
+;jhondeere-de;pickup
+;jhondeere-de;free-standard-shipping
