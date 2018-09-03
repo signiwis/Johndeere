@@ -1083,3 +1083,74 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 ;;LeftContentSlot-checkout-login;LeftContentSlot;;LeftContentSlot-checkout-login;;;
 ;;CenterContentSlot-checkout-login;CenterContentSlot;;CenterContentSlot-checkout-login;;;
 ;;RightContentSlot-checkout-login;RightContentSlot;;RightContentSlot-checkout-login;;;
+
+#Anusha Code
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+;;DashBoardCategoryLink;DashBoard Category Link;DashBoard/c/DashBoard;DashBoardCategoryLink;DashBoardCategoryLink;;DashBoard;;
+;;BillsCategoryLink;Bills Category Link;Bills/c/Bills;BillsCategoryLink;BillsCategoryLink;;Bills;;
+;;UsageCategoryLink;Usage Category Link;Usage/c/Usage;UsageCategoryLink;UsageCategoryLink;;Usage;;
+;;OffersCategoryLink;Offers Category Link;Offers/c/Offers;OffersCategoryLink;OffersCategoryLink;;Offers;;
+;;MovingHouseCategoryLink;MovingHouse Category Link;MovingHouse/c/MovingHouse;MovingHouseCategoryLink;MovingHouseCategoryLink;;MovingHouse;;
+
+# Navigation Bar Component
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;link(uid, $contentCV);styleClass;&componentRef
+;;DashBoardBarComponent;DashBoard Bar Component;10;DashBoardCategoryLink;;DashBoardBarComponent
+;;BillsBarComponent;Bills Bar Component;10;BillsCategoryLink;;BillsBarComponent
+;;UsageBarComponent;Usage Bar Component;10;UsageCategoryLink;;UsageBarComponent
+;;OffersBarComponent;Offers Bar Component;10;OffersCategoryLink;;OffersBarComponent
+;;MovingHouseBarComponent;MovingHouse Bar Component;10;MovingHouseCategoryLink;;MovingHouseBarComponent
+
+# CMS Navigation Nodes
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+;DashBoardNavNode;;DashBoard Category;JhondeereUKCategoryNavNode;DashBoardCategoryLink;DashBoardNavNode
+;BillsNavNode;;Bills Category;JhondeereUKCategoryNavNode;BillsCategoryLink;BillsNavNode
+;UsageNavNode;;Usage Category;JhondeereUKCategoryNavNode;UsageCategoryLink;UsageNavNode
+;OffersNavNode;;Offers Category;JhondeereUKCategoryNavNode;OffersCategoryLink;OffersNavNode
+;MovingHouseNavNode;;MovingHouse Category;JhondeereUKCategoryNavNode;MovingHouseCategoryLink;MovingHouseNavNode
+
+# Navigation Bar Component
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];navigationNode(&nodeRef);dropDownLayout(code)
+;;DashBoardBarComponent;DashBoardNavNode
+;;BillsBarComponent;BillsNavNode
+;;UsageBarComponent;UsageNavNode
+;;OffersBarComponent;OffersNavNode
+;;MovingHouseBarComponent;MovingHouseNavNode
+
+# Navigation Bar Collection Component
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
+;;MercuryNavBarComponent;Navigation Bar Collection Componeent;DashBoardBarComponent,BillsBarComponent,UsageBarComponent,OffersBarComponent,MovingHouseBarComponent;MercuryNavBarComponent
+#Anusha Code
+#Start of  Story ID- 105 
+		#Impex for Media
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/png'];&imageRef;folder(qualifier)[default='images'];altText
+;;airpointsMedia1;$siteResource/images/banners/homepage/airpoints.png;;airpoints.png;;
+
+#Impex for AirpointsComponent
+
+INSERT_UPDATE AirpointsComponent;$contentCV[unique=true];uid[unique=true];name;airpointsImage(code);airpointsText[lang=$lang];&componentRef;
+;;airpointsComponent1;Airpoints Component;airpointsMedia1;"REGISTER TO EARN AIRPOINTS DOLLARS WITH US AND GET CLOSER TO YOUR NEXT HOLIDAY";airpointsComponent1
+
+
+#Impex for defining content slot name
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;AirpointsContentSlotName1;;AirpointsComponent
+
+#Impex for defining content slot
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;airpointsContentSlot1;Airpoints content slot1;true;airpointsComponent1
+
+#Impex for defining content slot for page
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;airpointsslotforpage-Homepage;AirpointsContentSlotName1;;airpointsContentSlot1
+
+#End of  Story ID- 105
+
+
