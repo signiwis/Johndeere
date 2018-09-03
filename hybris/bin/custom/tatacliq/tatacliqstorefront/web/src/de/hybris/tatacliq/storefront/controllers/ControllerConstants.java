@@ -44,6 +44,10 @@ public interface ControllerConstants
 			 * Default CMS component controller
 			 */
 			String DefaultCMSComponent = _Prefix + "DefaultCMSComponentController"; // NOSONAR
+			
+			//Prashant
+			String CustomTextComponent = _Prefix + CustomTextComponentModel._TYPECODE + _Suffix;
+			//Prashant
 
 			/**
 			 * CMS components that have specific handlers

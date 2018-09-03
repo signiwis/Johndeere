@@ -42,6 +42,19 @@
 
 
 		<!-- TypeGroups are for structure of this file only -->
+		
+				<!-- Prashant -->
+			<itemtype code="CustomTextComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+				jaloclass="de.hybris.tatacliq.core.jalo.CustomTextComponent">
+            <description>Used to display text on homepage</description>
+                <attributes>
+                    <attribute type="localized:java.lang.String" qualifier="text">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+		<!-- Prashant -->
 
 		<typegroup name="Apparel">
 			<itemtype code="ApparelProduct" extends="Product"

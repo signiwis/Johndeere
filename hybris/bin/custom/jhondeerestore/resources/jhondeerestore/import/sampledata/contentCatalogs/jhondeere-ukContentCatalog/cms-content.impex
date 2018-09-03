@@ -1083,3 +1083,21 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 ;;LeftContentSlot-checkout-login;LeftContentSlot;;LeftContentSlot-checkout-login;;;
 ;;CenterContentSlot-checkout-login;CenterContentSlot;;CenterContentSlot-checkout-login;;;
 ;;RightContentSlot-checkout-login;RightContentSlot;;RightContentSlot-checkout-login;;;
+
+#Prashant
+
+INSERT_UPDATE CustomTextComponent;$contentCV[unique=true];uid[unique=true];text;&componentRef;
+;;textComponent;"ACCOUNT INFORMATION";textComponent
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;textComponentSlotName;;CustomTextComponent
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;textComponentSlot;Text Component slot;true;textComponent
+
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;textComponentslotforpage-Homepage;textComponentSlotName;;textComponentSlot
+
+#Prashant
