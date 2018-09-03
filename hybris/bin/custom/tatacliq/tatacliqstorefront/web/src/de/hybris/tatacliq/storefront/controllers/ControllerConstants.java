@@ -22,6 +22,7 @@ import de.hybris.platform.acceleratorcms.model.components.SimpleResponsiveBanner
 import de.hybris.platform.acceleratorcms.model.components.SubCategoryListComponentModel;
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
+import de.hybris.tatacliq.core.model.CustomComponentModel;
 
 
 /**
@@ -44,6 +45,15 @@ public interface ControllerConstants
 			 * Default CMS component controller
 			 */
 			String DefaultCMSComponent = _Prefix + "DefaultCMSComponentController"; // NOSONAR
+			/**
+			 * Start of Story ID- 105
+			 **/
+
+			String CustomComponent = _Prefix + CustomComponentModel._TYPECODE + _Suffix;
+
+			/**
+			 * End of Story ID- 105
+			 **/
 
 			/**
 			 * CMS components that have specific handlers
