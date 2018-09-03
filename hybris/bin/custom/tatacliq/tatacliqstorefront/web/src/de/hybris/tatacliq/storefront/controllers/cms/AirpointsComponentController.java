@@ -20,8 +20,8 @@ public class AirpointsComponentController extends AbstractCMSComponentController
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final AirpointsComponentModel component)
 	{
-		model.addAttribute("airpointsImage", component.getCustomImage());
-		model.addAttribute("airpointsText", component.getCustomText());
+        model.addAttribute("airpointsImage", component.getAirpointsImage());
+        model.addAttribute("airpointsText", component.getAirpointsText());
 	}
 
 	/*

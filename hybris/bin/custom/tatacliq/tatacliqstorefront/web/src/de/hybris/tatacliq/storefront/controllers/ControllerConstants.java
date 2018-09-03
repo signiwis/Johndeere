@@ -22,6 +22,7 @@ import de.hybris.platform.acceleratorcms.model.components.SimpleResponsiveBanner
 import de.hybris.platform.acceleratorcms.model.components.SubCategoryListComponentModel;
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
+import de.hybris.tatacliq.core.model.AirpointsComponentModel;
 
 
 /**
@@ -49,7 +50,7 @@ public interface ControllerConstants
 			 * Start of Story ID- 105
 			 **/
 
-			String AirpointsComponent = _Prefix + AirpointsComponentModelModel._TYPECODE + _Suffix;
+			String AirpointsComponent = _Prefix + AirpointsComponentModel._TYPECODE + _Suffix;
 
 			/**
 			 * End of Story ID- 105
