@@ -45,7 +45,17 @@ public interface ControllerConstants
 			 */
 			String DefaultCMSComponent = _Prefix + "DefaultCMSComponentController"; // NOSONAR
 
+         	/**
+			 * Start of Story ID- 105
+			 **/
+
+			String AirpointsComponent = _Prefix + AirpointsComponentModelModel._TYPECODE + _Suffix;
+
 			/**
+			 * End of Story ID- 105
+			 **/
+
+			 /**
 			 * CMS components that have specific handlers
 			 */
 			String PurchasedCategorySuggestionComponent = _Prefix + PurchasedCategorySuggestionComponentModel._TYPECODE + _Suffix; // NOSONAR
