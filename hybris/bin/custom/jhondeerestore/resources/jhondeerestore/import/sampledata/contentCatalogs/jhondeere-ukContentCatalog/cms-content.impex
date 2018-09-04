@@ -1124,3 +1124,84 @@ INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];na
 INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
 ;;MercuryNavBarComponent;Navigation Bar Collection Componeent;DashBoardBarComponent,BillsBarComponent,UsageBarComponent,OffersBarComponent,MovingHouseBarComponent;MercuryNavBarComponent
 #Anusha Code
+
+
+
+#Story ID- 101
+
+#page template
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;billPageTemplate;Bill Page Template;layout/billLayoutPage;ContentPage
+
+
+#Content page
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;billContentPage;Bill Content Page;billPageTemplate;billCMSPage
+
+
+
+#ContentSlotName
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='billPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;billParagraph;;;wide
+
+#CMSParagraphComponent
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;content;
+;;billHeadingComponent;Bill Heading information;billHeadingComponent;;;;BILL;
+
+#ContentSlot
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
+;;billParagraphSlot;Bill Paragraph Slot;true;billHeadingComponent
+
+#ContentSlotForTemplate
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='billPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OffersPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-OffersPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-OffersPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-OffersPage;MiniCart;;MiniCartSlot;true
+;;Footer-OffersPage;Footer;;FooterSlot;true
+;;HeaderLinks-OffersPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-OffersPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-OffersPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-OffersPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-OffersPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+;;billParagraphSlot-billPage;billParagraph;;billParagraphSlot;true
+
+
+
+#CMSNavigationNode
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);children(uid,$contentCV)[mode=append];links(uid, $contentCV);&nodeRef
+;BillNavigationNode;;Bill Navigation Node;JhondeereUKCategoryNavNode;;BillLink;BillNavigationNode
+ 
+ #NavigationBarComponent
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;link(uid, $contentCV);styleClass;navigationNode(uid,$contentCV);dropDownLayout(code)[default='AUTO']
+;;BillNavigationBarComponent;Bill Navigation Bar Component;10;BillLink;;BillNavigationNode;;
+ 
+ #NavigationBarCollectionComponent
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
+;;MercuryNavBarComponent;Navigation Bar Collection Componeent;DashBoardBarComponent,UsageBarComponent,OffersBarComponent,MovingHouseBarComponent,BillNavigationBarComponent;MercuryNavBarComponent
+
+#CMSLinkComponent
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;category(code, $productCV);target(code)[default='sameWindow'];;
+;;BillLink;Bill Link;/bill;;;;
+
+
+#Update name
+UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=en]
+;;BillNavigationNode;"bill"
+UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=en]
+;;BillLink;"Bill"
+
+
+#Story ID- 101
+
+
+
+
+
