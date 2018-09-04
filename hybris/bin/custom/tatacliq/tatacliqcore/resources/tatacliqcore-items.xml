@@ -146,6 +146,22 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+		<!--Start of  Story ID- 105 -->
+		<itemtype code="AirpointsComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+					jaloclass="de.hybris.tatacliq.core.jalo.AirpointsComponent">
+					<description>Used to display custom banner on homepage</description>
+						<attributes>
+							<attribute type="Media" qualifier="airpointsImage">
+								<modifiers read="true" write="true" optional="false" />
+								<persistence type="property" />
+							</attribute>
+							<attribute type="localized:java.lang.String" qualifier="airpointsText">
+								<modifiers read="true" write="true" optional="false" />
+								<persistence type="property" />
+							</attribute>
+						</attributes>
+					</itemtype>
+		<!--End of  Story ID- 105 -->
 		</typegroup>
 		
 		<typegroup name="Electronics">

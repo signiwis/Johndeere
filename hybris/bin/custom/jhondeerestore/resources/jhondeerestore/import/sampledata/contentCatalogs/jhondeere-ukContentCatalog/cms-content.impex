@@ -1127,6 +1127,7 @@ INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[uniqu
 
 
 
+
 #Story ID- 101
 
 #page template
@@ -1202,6 +1203,36 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=e
 #Story ID- 101
 
 
+
+=======
+#Start of  Story ID- 105 
+		#Impex for Media
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/png'];&imageRef;folder(qualifier)[default='images'];altText
+;;airpointsMedia1;$siteResource/images/banners/homepage/airpoints.png;;airpoints.png;;
+
+#Impex for AirpointsComponent
+
+INSERT_UPDATE AirpointsComponent;$contentCV[unique=true];uid[unique=true];name;airpointsImage(code);airpointsText[lang=$lang];&componentRef;
+;;airpointsComponent1;Airpoints Component;airpointsMedia1;"REGISTER TO EARN AIRPOINTS DOLLARS WITH US AND GET CLOSER TO YOUR NEXT HOLIDAY";airpointsComponent1
+
+
+#Impex for defining content slot name
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;AirpointsContentSlotName1;;AirpointsComponent
+
+#Impex for defining content slot
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;airpointsContentSlot1;Airpoints content slot1;true;airpointsComponent1
+
+#Impex for defining content slot for page
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;airpointsslotforpage-Homepage;AirpointsContentSlotName1;;airpointsContentSlot1
+
+#End of  Story ID- 105
 
 
 
