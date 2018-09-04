@@ -1086,12 +1086,12 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 #Anusha Code
 # CMS Link Components
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
-;;DashBoardCategoryLink;DashBoard Category Link;DashBoard/c/DashBoard;DashBoardCategoryLink;DashBoardCategoryLink;;DashBoard;;
-;;BillsCategoryLink;Bills Category Link;Bills/c/Bills;BillsCategoryLink;BillsCategoryLink;;Bills;;
-;;UsageCategoryLink;Usage Category Link;Usage/c/Usage;UsageCategoryLink;UsageCategoryLink;;Usage;;
-;;OffersCategoryLink;Offers Category Link;Offers/c/Offers;OffersCategoryLink;OffersCategoryLink;;Offers;;
-;;MovingHouseCategoryLink;MovingHouse Category Link;MovingHouse/c/MovingHouse;MovingHouseCategoryLink;MovingHouseCategoryLink;;MovingHouse;;
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];
+;;DashBoardCategoryLink;DashBoard Category Link;DashBoard/c/DashBoard;DashBoardCategoryLink;DashBoardCategoryLink;
+;;BillsCategoryLink;Bills Category Link;Bills/c/Bills;BillsCategoryLink;BillsCategoryLink;
+;;UsageCategoryLink;Usage Category Link;Usage/c/Usage;UsageCategoryLink;UsageCategoryLink;
+;;OffersCategoryLink;Offers Category Link;Offers/c/Offers;OffersCategoryLink;OffersCategoryLink;
+;;MovingHouseCategoryLink;MovingHouse Category Link;MovingHouse/c/MovingHouse;MovingHouseCategoryLink;MovingHouseCategoryLink;
 
 # Navigation Bar Component
 
