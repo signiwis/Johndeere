@@ -40,7 +40,36 @@
 
 		<!-- Add your item definitions here -->
 
-
+		<!-- Start Story ID- 102 -->
+		<itemtype code="CustomTextComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+            jaloclass="org.training.core.jalo.CustomTextComponent">
+            <description>Used to display text on homepage</description>
+                <attributes>
+                    <attribute type="localized:java.lang.String" qualifier="text">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+  					<attribute type="AddressList" qualifier="AddressCollection">
+  						<modifiers read="true" write="true" optional="false"/>
+  						<persistence type="property"/>
+  					</attribute>
+                </attributes>
+            </itemtype>
+		<!-- End Story ID- 102 -->
+		
+		<!-- Start Story ID- 104 -->
+			<itemtype code="UserNameComponent" extends="SimpleCMSComponent" autocreate="true" generate="true"
+						jaloclass="de.hybris.tatacliq.core.jalo.UserNameComponent">
+						<description>Used to display User name on homepage</description>
+							<attributes>
+								<attribute type="localized:java.lang.String" qualifier="uname">
+									<modifiers read="true" write="true" optional="false"/>
+									<persistence type="property"/>
+								</attribute>
+							</attributes>
+			</itemtype>
+		<!-- End Story ID- 104 -->
+		
 		<!-- TypeGroups are for structure of this file only -->
 
 		<typegroup name="Apparel">

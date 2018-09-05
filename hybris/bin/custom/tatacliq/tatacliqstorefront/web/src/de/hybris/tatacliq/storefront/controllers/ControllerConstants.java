@@ -45,6 +45,12 @@ public interface ControllerConstants
 			 */
 			String DefaultCMSComponent = _Prefix + "DefaultCMSComponentController"; // NOSONAR
 
+			// Start Story ID- 102
+			String CustomTextComponent = _Prefix + CustomTextComponentModel._TYPECODE + _Suffix;
+			// End Story ID- 102
+			// Start Story ID- 104
+			String UserNameComponent = _Prefix + UserNameComponentModel._TYPECODE + _Suffix;
+			// End Story ID- 104
 			/**
 			 * CMS components that have specific handlers
 			 */
