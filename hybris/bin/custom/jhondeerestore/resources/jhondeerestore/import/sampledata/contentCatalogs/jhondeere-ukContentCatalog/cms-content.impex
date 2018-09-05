@@ -1202,6 +1202,46 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=e
 #Story ID- 101
 
 
+# Start Story ID- 102
 
+INSERT_UPDATE CustomTextComponent;$contentCV[unique=true];uid[unique=true];text;&componentRef;
+;;textComponent;"ACCOUNT INFORMATION";textComponent  
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;textComponentSlotName;;CustomTextComponent
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;textComponentSlot;Text Component slot;true;textComponent
+
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;textComponentslotforpage-Homepage;textComponentSlotName;;textComponentSlot
+
+#Updating the CustomTextComponent by adding value for the another attribute i,e Address collection drop down box
+
+INSERT_UPDATE CustomTextComponent;$contentCV[unique=true];uid[unique=true];AddressCollection;&componentRef
+;;textComponent;Account 888888888 100 king Street Mt Eden Auckland, Account 888888888 200 king Street Mt Eden Auckland, Account 888888888 300 king Street Mt Eden Auckland;textComponent
+
+# End Story ID- 102
+
+# Start Story ID- 104
+# Rajesh Current User name component 
+
+INSERT_UPDATE UserNameComponent;$contentCV[unique=true];uid[unique=true];uname;&componentRef;
+;;currentUserNameComponent;"Hi Prashant";currentUserNameComponent
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;cuserNameComponentSlotName;;UserNameComponent
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;cuserNameComponentSlot;Text Component slot;true;currentUserNameComponent
+
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;cuserNameComponentslotforpage-Homepage;cuserNameComponentSlotName;;cuserNameComponentSlot
+
+# End Story ID- 104
 
 
